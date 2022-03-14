@@ -70,7 +70,8 @@ The data model is implemented using a star schema. The schema contains one fact 
 | weekday    | INT       |             |
 
 ## File Structure And Description
-.
+
+```.
 ├── data/
 │   ├── log_data/
 │   │   └── 2018/
@@ -98,7 +99,7 @@ The data model is implemented using a star schema. The schema contains one fact 
 ├── README.md
 ├── sql_queries.py (Contains all the create sql queries needed to create the database tables when calling create_tables.py. Also contains the Inserts sql to insert data returned by etl.py)
 └── test.ipynb (Jupyter Notebook to query and test data in database)
-
+```
 
 ## Execution
 
