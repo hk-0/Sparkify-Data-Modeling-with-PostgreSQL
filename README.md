@@ -117,7 +117,7 @@ Data is now available in the fact and dimension tables for analysis
 ## Example Queries
 
 ### Example SQL 1 : Count of users by subscription level that listened to music on sparkify in Week 46.
-> select s.level,t.week week_number,count(1) from songplays s join time t on s.start_time = t.start_time where t.week = 46 group by s.level,t.week 
+``` select s.level,t.week week_number,count(1) from songplays s join time t on s.start_time = t.start_time where t.week = 46 group by s.level,t.week ```
 
 | week_number | level | count |
 |------------:|------:|------:|
@@ -125,13 +125,14 @@ Data is now available in the fact and dimension tables for analysis
 |          46 |  paid |  1656 |
 
 ### Example SQL 2 : Count of users online by time of day. Break the day into 4 parts - morning (6 am to 12 pm), afternoon(12 pm to 6 pm), evening (6 pm to 12 am) and night (12 am to 6 am)
-> select 
+``` select 
     case 
         when t.hour >=0 and t.hour <6 then 'Night'
         when t.hour >=6 and t.hour <12 then 'Morning' 
         when t.hour >=12 and t.hour <18 then 'Afternoon' 
         else 'Evening' END as time_of_day
     ,count(distinct user_id) from songplays s join time t on s.start_time = t.start_time group by 1   limit 5;
+```
     
 | time_of_day | count |
 |------------:|------:|
